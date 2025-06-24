@@ -23,13 +23,18 @@ public class e_FlattenBinaryTreeToLinkedList {
     }
 
     Queue<TreeNode> queue = new LinkedList<>();
-    public void flatten(TreeNode root) {
-        if(root==null){
+
+    /*
+     Time Complexity : O(n)
+     Space Complexity : O(n)
+    */
+    public void flattenApproach1(TreeNode root) {
+        if (root == null) {
             return;
         }
         insertInQueue(root);
         TreeNode previousNode = queue.poll();
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode currentNode = queue.poll();
             previousNode.left = null;
             previousNode.right = currentNode;
@@ -37,13 +42,39 @@ public class e_FlattenBinaryTreeToLinkedList {
         }
     }
 
-    private void insertInQueue(TreeNode node){
-        if(node==null){
+    private void insertInQueue(TreeNode node) {
+        if (node == null) {
             return;
         }
         queue.offer(node);
         insertInQueue(node.left);
         insertInQueue(node.right);
+    }
+
+
+    /*
+     Better Space Complexity Solution
+
+     Time Complexity : O(n)
+     Space Complexity : O(1)
+     */
+    public void flatten(TreeNode root) {
+        if(root==null){
+            return;
+        }
+        TreeNode current = root;
+        while(current!=null){
+            if(current.left!=null){
+                TreeNode temp = current.left;
+                while(temp.right!=null){
+                    temp = temp.right;
+                }
+                temp.right = current.right;
+                current.right = current.left;
+                current.left=null;
+            }
+            current = current.right;
+        }
     }
 
 
