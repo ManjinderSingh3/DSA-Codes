@@ -1,4 +1,4 @@
-package main.java;
+package main.java.BFS;
 import java.util.*;
 
 public class vii_FindingCousinsInBinaryTree {

@@ -1,4 +1,4 @@
-package main.java;
+package main.java.BFS;
 
 public class v_PopulatingNextRightPointer {
     class Node {
