@@ -2,41 +2,21 @@ import java.util.*;
 
 public class Graph_Representation {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    public static void main(String[] args) {
 
-        TreeNode() {
-        }
+        int n=3, m=3;
+        ArrayList<ArrayList<Integer>> adjList = new ArrayList<ArrayList<Integer>>();
 
-        TreeNode(int val) {
-            this.val = val;
-        }
+        // Create n+1 ArrayLists
+        for(int i=0;i<n;i++){
+            adjList.add(new ArrayList<Integer>());
+            // U and v are two vertex/Nodes
+            //adjList.get(u).add(v);
+            //adjList.get(v).add(u);
 
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
-    public void flatten(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        TreeNode current = root;
-        while (current != null) {
-            if (current.left != null) {
-                TreeNode temp = current.left;
-                while (temp.right != null) {
-                    temp = temp.right;
-                }
-                temp.right = current.right;
-                current.right = current.left;
-                current.left = null;
-            }
-            current = current.right;
+            // Example : there is a edge between node 2 & 3
+            adjList.get(2).add(3);
+            adjList.get(3).add(2);
         }
     }
 }
