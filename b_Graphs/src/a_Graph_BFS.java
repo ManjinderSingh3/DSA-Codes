@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Graph_BFS {
+public class a_Graph_BFS {
 
     static class Edge{
         int source;
