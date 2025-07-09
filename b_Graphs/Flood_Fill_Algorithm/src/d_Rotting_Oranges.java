@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class c_Rotting_Oranges {
+public class d_Rotting_Oranges {
 
     private void dfs(int[][] grid, int[][] timeGrid, int i, int j, int currentTime){
         //Boundary conditions
@@ -53,7 +53,7 @@ public class c_Rotting_Oranges {
                 {0, 1, 1}
         };
 
-        c_Rotting_Oranges solution = new c_Rotting_Oranges();
+        d_Rotting_Oranges solution = new d_Rotting_Oranges();
         int result = solution.orangesRotting(grid);
         System.out.println("Minimum time required to rot all oranges: " + result);
     }
