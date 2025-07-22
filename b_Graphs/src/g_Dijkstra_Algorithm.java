@@ -1,5 +1,5 @@
 import java.util.*;
-
+// Dijkstra is a Greedy type algorithm
 public class g_Dijkstra_Algorithm {
 
     public static class Edge{
