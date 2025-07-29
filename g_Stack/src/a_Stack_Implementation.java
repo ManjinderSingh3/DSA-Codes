@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stack_Implementation {
+public class a_Stack_Implementation {
     List<Integer> stack;
 
-    public Stack_Implementation(){
+    public a_Stack_Implementation(){
         stack = new ArrayList<Integer>();
     }
 
@@ -29,7 +29,7 @@ public class Stack_Implementation {
     }
 
     public static void main(String[] args) {
-        Stack_Implementation stackImplementation = new Stack_Implementation();
+        a_Stack_Implementation stackImplementation = new a_Stack_Implementation();
         stackImplementation.push(100);
         stackImplementation.push(200);
         stackImplementation.push(300);
