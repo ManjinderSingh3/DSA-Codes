@@ -27,7 +27,7 @@ public class a_SkipACharacter {
     }
 
     public static void main(String[] args) {
-        //System.out.println(skipACharacter("abccdah"));
+        System.out.println(skipACharacter("abccdah"));
         System.out.println(skipACharacter2("","abccdah"));
     }
 }
