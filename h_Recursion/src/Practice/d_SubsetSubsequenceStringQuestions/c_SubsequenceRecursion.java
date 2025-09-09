@@ -2,7 +2,7 @@ package Practice.d_SubsetSubsequenceStringQuestions;
 
 import java.util.ArrayList;
 
-public class c_Subsequence {
+public class c_SubsequenceRecursion {
     public static void subSequence(String processedString, String unprocessedString){
         if(unprocessedString.isEmpty()){
             System.out.println(processedString);
