@@ -32,9 +32,24 @@ public class f_SubsequencePermutation {
         return result;
     }
 
+    public static int permutationCount(String processed, String unprocessed){
+        if(unprocessed.isEmpty()){
+            return 1;
+        }
+        int count = 0;
+        for(int i=0;i<=processed.length();i++){
+            String first = processed.substring(0,i);
+            String second = processed.substring(i, processed.length());
+            count = count + permutationCount(first+unprocessed.charAt(0)+second, unprocessed.substring(1));
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         permutation("","abc");
         ArrayList<String> res = permutationsInList("", "abc");
         System.out.println(res);
+        System.out.println("Number of permutations : " + res.size());
+        System.out.println("Count:"+ permutationCount("","abcd"));
     }
 }
