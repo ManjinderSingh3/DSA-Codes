@@ -29,10 +29,10 @@ public class a_NumberOfPaths {
         }
 
         ArrayList<String> list = new ArrayList<>();
-        if(row>0){
+        if(row>1){
             list.addAll(printPaths(processed+"D", row-1, column));
         }
-        if(column>0){
+        if(column>1){
             list.addAll(printPaths(processed+"R", row, column-1));
         }
         return list;
