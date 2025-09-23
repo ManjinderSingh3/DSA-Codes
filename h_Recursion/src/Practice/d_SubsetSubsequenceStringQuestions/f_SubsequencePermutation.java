@@ -1,6 +1,7 @@
 package Practice.d_SubsetSubsequenceStringQuestions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class f_SubsequencePermutation {
@@ -45,11 +46,36 @@ public class f_SubsequencePermutation {
         return count;
     }
 
+    public static List<List<Integer>> helper(List<Integer> processed, int[] unprocessed){
+        // Base condition
+        if(unprocessed.length==0){
+            List<List<Integer>> list = new ArrayList<>();
+            list.add(new ArrayList<>(processed));
+            return list;
+        }
+
+        List<List<Integer>> result = new ArrayList<>();
+        int firstElement = unprocessed[0];
+        int[] remainingElements = Arrays.copyOfRange(unprocessed, 1, unprocessed.length);
+
+        for(int i=0; i<processed.size()+1; i++){
+            List<Integer> newProcessed = new ArrayList<>(processed);
+            newProcessed.add(i, firstElement);
+            result.addAll(helper(newProcessed,remainingElements));
+        }
+        return result;
+    }
+
+
     public static void main(String[] args) {
+        int[] nums = {1,2,3};
+        /*
         permutation("","abc");
         ArrayList<String> res = permutationsInList("", "abc");
         System.out.println(res);
         System.out.println("Number of permutations : " + res.size());
         System.out.println("Count:"+ permutationCount("","abcd"));
+         */
+        System.out.println(helper(new ArrayList<>(), nums));
     }
 }
